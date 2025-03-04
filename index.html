@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2019年至2024年上海市GDP总值及增长率</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+</head>
+
+<body>
+  <div id="main" style="width: 600px;height:400px;"></div>
+  <script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+
+    // 你的配置项
+    var option = {
+      "title": {
+        "text": "2019年至2024年上海市GDP总值及增长率",
+        "subtext": "数据来源：上海市统计局"
+      },
+      "tooltip": {
+        "trigger": "axis",
+        "axisPointer": {
+          "type": "shadow"
+        }
+      },
+      "legend": {
+        "data": ["GDP总值", "增长率"]
+      },
+      "xAxis": [
+        {
+          "type": "category",
+          "data": ["2019年", "2020年", "2021年", "2022年", "2023年", "2024年"]
+        }
+      ],
+      "yAxis": [
+        {
+          "type": "value",
+          "name": "GDP总值（亿元）",
+          "axisLabel": {
+            "formatter": "{value} 亿元"
+          }
+        },
+        {
+          "type": "value",
+          "name": "增长率（%）",
+          "axisLabel": {
+            "formatter": "{value} %"
+          }
+        }
+      ],
+      "series": [
+        {
+          "name": "GDP总值",
+          "type": "bar",
+          "data": [38155.32, 38700.58, 43214.85, 45594.89, 51404.47, 53926.71],
+          "itemStyle": {
+            "color": "#5470C6"
+          }
+        },
+        {
+          "name": "增长率",
+          "type": "line",
+          "yAxisIndex": 1,
+          "data": [null, 1.43, 11.66, 5.52, 12.73, 5.00],
+          "itemStyle": {
+            "color": "#EE6666"
+          }
+        }
+      ]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+  </script>
+</body>
+
+</html>
